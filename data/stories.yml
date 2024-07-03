@@ -1,0 +1,33 @@
+
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: provide name
+  steps:
+  - intent: provide_name
+  - slot_was_set:
+    - name: John
+  - action: utter_ask_friend
+
+- story: provide friend names
+  steps:
+  - intent: provide_friend_names
+  - slot_was_set:
+    - friend: 
+      - Alice
+      - Bob
+  - action: utter_ask_scenario
+
+- story: provide scenario
+  steps:
+  - intent: provide_scenario
+  - slot_was_set:
+    - scenario: adventure
+  - action: utter_start_story
+  - action: action_get_ai_story
+ 

@@ -1,0 +1,33 @@
+
+version: "3.1"
+ 
+
+nlu:
+- intent: provide_name
+  examples: |
+    - My name is [John](name)
+    - [Alice](name)
+    - [Bob](name)
+    - I am [Mike](name)
+
+- intent: provide_friend_names
+  examples: |
+    - My friends are [Alice](friend) and [Bob](friend)
+    - [Charlie](friend) and [Diana](friend)
+    - [Eve](friend), [Frank](friend), and [Grace](friend)
+    - [Helen](friend) is my friend
+    - [Isaac](friend) 
+
+- intent: provide_scenario
+  examples: |
+    -  
+    - I want a [adventure](scenario) story
+    - Can you create a [fantasy](scenario) story?
+    - A [comedy](scenario) story would be fun
+
+- intent: start_story
+  examples: |
+    - Tell me a story
+    - Can you narrate a story?
+    - Start a story with my friends
+

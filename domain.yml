@@ -1,0 +1,70 @@
+
+
+
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - ask_question
+  - provide_name
+  - provide_friend_names
+  - provide_scenario
+  - start_story
+
+entities:
+  - name
+  - friend
+  - scenario
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+  friend:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: friend
+  scenario:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: scenario
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+  - text: "What's your name?"
+
+  utter_ask_friend:
+  - text: "Who are your friends?"
+
+  utter_ask_scenario:
+  - text: "What kind of story would you like to hear?"
+
+  utter_start_story:
+  - text: "Let's start the story!"
+
+actions:
+  - action_get_ai_story
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+ 
